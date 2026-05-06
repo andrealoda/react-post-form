@@ -17,13 +17,7 @@ export default function PostNewPost({ onPostData }) {
         const value = e.target.value;
         const checked = e.target.checked;
 
-        let newValue
-
-        if (type === 'checkbox') {
-            newValue = checked
-        } else {
-            newValue = value
-        }
+        let newValue = type === 'checkbox' ? checked : value;
 
         setDraftPost(
             {
