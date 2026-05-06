@@ -1,4 +1,7 @@
 export default function ShowPost({ postData }) {
+
+
+    
     return (
         <>
             <div className="author">{postData.author}</div>

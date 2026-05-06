@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import PostNewPost from './components/PostNewPost';
 
 const emptyPost = {
   author: '',
   title: '',
-  comapnyName: '',
   body: '',
   public: false
 }
@@ -12,16 +12,11 @@ const emptyPost = {
 
 const App = () => {
 
-  const [postData, setPostData] = useState(emptyPost);
+  const [postData, setPostData] = useState([]);
 
-  function handlePostData(e) {
-    console.log(e);
-    setPostData(
-      {
-        ...postData,
-        [e.target.name]: e.target.value
-      }
-    )
+
+  function handleNewPost(newPost) {
+    setPostData([...postData, newPost]);
   }
 
   return (
@@ -29,10 +24,20 @@ const App = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <PostNewPost postData={postData} onPostData={handlePostData} />
-          </div>
-          <div className="col">
-            <ShowPost postData={postData} />
+            <PostNewPost onPostData={handleNewPost} />
+
+            {postData.map((post, index) => (
+              <div key={index} className="card my-3 p-3">
+                <h3>{post.title}</h3>
+                <p><strong>Author:</strong> {post.author}</p>
+                <p>{post.body}</p>
+                <span className={`badge ${post.public ? 'bg-success' : 'bg-secondary'}`}>
+                  {post.public ? 'Public' : 'Private'}
+                </span>
+              </div>
+            ))}
+
+
           </div>
         </div>
       </div>
