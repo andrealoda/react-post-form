@@ -4,10 +4,14 @@ export default function ShowPost({ postData }) {
     
     return (
         <>
-            <div className="author">{postData.author}</div>
-            <div className="author">{postData.title}</div>
-            <div className="author">{postData.body}</div>
-            <div className="public">{false}</div>
+            {postData.map((post, index) => (
+              <div key={index} className="card my-3 p-3">
+                <h3>{post.title}</h3>
+                <p><strong>Author:</strong> {post.author}</p>
+                <p>{post.body}</p>
+                <span>{post.public ? 'Public' : 'Private'}</span>
+              </div>
+            ))}
         </>
     )
 }
