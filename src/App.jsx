@@ -17,7 +17,10 @@ const App = () => {
 
 
   function handleNewPost(newPost) {
-    setPostData([...postData, newPost]);
+    const newPostWithID = {
+      ...newPost, id: crypto.randomUUID()
+    }
+    setPostData([...postData, newPostWithID]);
   }
 
   return (
@@ -26,7 +29,7 @@ const App = () => {
         <div className="row">
           <div className="col">
 
-            <ShowPost postData={postData} />
+            <ShowPost postData={postData} setPostData={setPostData}/>
             <PostNewPost onPostData={handleNewPost} />
 
           </div>

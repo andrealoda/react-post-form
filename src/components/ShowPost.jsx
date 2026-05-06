@@ -1,16 +1,25 @@
-export default function ShowPost({ postData }) {
+export default function ShowPost({ postData, setPostData }) {
 
+    function removeArticle(idToRemove) {
+        console.log("idToRemove:", idToRemove);
+        console.log("postData:", postData);
+        const filteredArticles = postData.filter(post => post.id !== idToRemove)
+        setPostData(filteredArticles)
+    }
 
-    
     return (
         <>
             {postData.map((post, index) => (
-              <div key={index} className="card my-3 p-3">
-                <h3>{post.title}</h3>
-                <p><strong>Author:</strong> {post.author}</p>
-                <p>{post.body}</p>
-                <span>{post.public ? 'Public' : 'Private'}</span>
-              </div>
+                <div key={index}>
+                    <p>{post.title}</p>
+                    <p>{post.author}</p>
+                    <p>{post.body}</p>
+                    <p>{post.public ? 'Public' : 'Private'}</p>
+                    <div>
+                        <button onClick={() => removeArticle(post.id)}>REMOVE</button>
+                    </div>
+
+                </div>
             ))}
         </>
     )
