@@ -25,8 +25,10 @@ const App = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <PostNewPost onPostData={handleNewPost} />
+
             <ShowPost postData={postData} />
+            <PostNewPost onPostData={handleNewPost} />
+
           </div>
         </div>
       </div>
