@@ -1,8 +1,6 @@
 export default function ShowPost({ postData, setPostData }) {
 
     function removeArticle(idToRemove) {
-        console.log("idToRemove:", idToRemove);
-        console.log("postData:", postData);
         const filteredArticles = postData.filter(post => post.id !== idToRemove)
         setPostData(filteredArticles)
     }
