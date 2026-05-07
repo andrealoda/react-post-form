@@ -12,10 +12,7 @@ export default function PostNewPost({ onPostData }) {
     const [draftPost, setDraftPost] = useState(newPost);
 
     function handlePostData(e) {
-        const name = e.target.name;
-        const type = e.target.type;
-        const value = e.target.value;
-        const checked = e.target.checked;
+        const { name, type, value, checked } = e.target;
 
         let newValue = type === 'checkbox' ? checked : value;
 
