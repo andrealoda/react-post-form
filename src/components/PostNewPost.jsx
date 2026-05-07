@@ -33,32 +33,38 @@ export default function PostNewPost({ onPostData }) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name='author'
-                value={draftPost.author}
-                onChange={handlePostData}
-            />
-            <input
-                type="text"
-                name='title'
-                value={draftPost.title}
-                onChange={handlePostData}
-            />
-            <input
-                type="text"
-                name='body'
-                value={draftPost.body}
-                onChange={handlePostData}
-            />
-            <input
-                type="checkbox"
-                name='public'
-                checked={draftPost.public}
-                onChange={handlePostData}
-            />
-            <button className='btn glass-card'>ADD</button>
-        </form>
+        <div className="wrapper glass-card">
+            <form onSubmit={handleSubmit}>
+                <h4>Autore</h4>
+                <input
+                    type="text"
+                    name='author'
+                    value={draftPost.author}
+                    onChange={handlePostData}
+                />
+                <h4>Titolo</h4>
+                <input
+                    type="text"
+                    name='title'
+                    value={draftPost.title}
+                    onChange={handlePostData}
+                />
+                <h4>Testo</h4>
+                <textarea
+                    name='body'
+                    value={draftPost.body}
+                    onChange={handlePostData}
+                />
+                <h4>Post pubblico?</h4>
+                <input
+                    type="checkbox"
+                    name='public'
+                    checked={draftPost.public}
+                    onChange={handlePostData}
+                />
+                <h4>Hai finito? Aggiungi alla pagina</h4>
+                <button className='btn'>+</button>
+            </form>
+        </div>
     )
 }

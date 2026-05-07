@@ -26,14 +26,13 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <div className="row">
-          <div className="col">
-
+        <div className="title glass-card">
+        <h1>YET ANOTHER BLOG</h1>
+        </div>
             <ShowPost postData={postData} setPostData={setPostData}/>
             <PostNewPost onPostData={handleNewPost} />
 
-          </div>
-        </div>
+
       </div>
     </>
   );

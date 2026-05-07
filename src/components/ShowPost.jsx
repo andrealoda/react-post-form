@@ -9,10 +9,10 @@ export default function ShowPost({ postData, setPostData }) {
         <>
             {postData.map((post, index) => (
                 <div key={index}>
-                    <p>{post.title}</p>
-                    <p>{post.author}</p>
+                    <h2>TITOLO: {post.title}</h2>
+                    <h3>AUTORE: {post.author}</h3>
                     <p>{post.body}</p>
-                    <p>{post.public ? 'Public' : 'Private'}</p>
+                    <p>{post.public ? 'Questo è un post pubblico' : 'Questo è un post privato'}</p>
                     <div>
                         <button onClick={() => removeArticle(post.id)}>REMOVE</button>
                     </div>

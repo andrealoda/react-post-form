@@ -4,3 +4,47 @@
     box-sizing: border-box;
 }
 
+.container {
+    padding: 1rem;
+    height: 100vh;
+    background-image: radial-gradient(circle, #343a60, #4e5579, #697292, #8690ad, #a5afc7, #a5b5cd, #a4bbd3, #a4c1d8, #80b1c6, #59a0b0, #329096, #007f77);
+}
+
+.title {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid grey;
+    border-radius: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #1c1c1c;
+}
+
+.wrapper {
+    padding: 2rem;
+    max-width: 600px;
+    background-color: lightgray;
+    border: 2px solid black;
+    margin: auto;
+    display: flex;
+}
+
+input,
+textarea,
+button {
+    border-color: #d16ba5;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Sfondo quasi invisibile */
+    backdrop-filter: blur(10px);
+    /* Sfocatura dello sfondo */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Bordo sottile "luce" */
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* Ombra morbida */
+}
