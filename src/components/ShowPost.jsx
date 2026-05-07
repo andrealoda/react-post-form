@@ -7,18 +7,21 @@ export default function ShowPost({ postData, setPostData }) {
 
     return (
         <>
+
             {postData.map((post, index) => (
                 <div key={index}>
-                    <h2>TITOLO: {post.title}</h2>
-                    <h3>AUTORE: {post.author}</h3>
-                    <p>{post.body}</p>
-                    <p>{post.public ? 'Questo è un post pubblico' : 'Questo è un post privato'}</p>
-                    <div>
-                        <button onClick={() => removeArticle(post.id)}>REMOVE</button>
+                    <div className="blog-post glass-card">
+                        <h2>TITOLO: {post.title}</h2>
+                        <h3>AUTORE: {post.author}</h3>
+                        <p>{post.body}</p>
+                        <p>{post.public ? 'Questo è un post pubblico' : 'Questo è un post privato'}</p>
+                        <div>
+                            <button onClick={() => removeArticle(post.id)}>REMOVE</button>
+                        </div>
                     </div>
-
                 </div>
             ))}
+
         </>
     )
 }
