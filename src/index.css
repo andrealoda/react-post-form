@@ -6,7 +6,7 @@
 
 .container {
     padding: 1rem;
-    height: 100vh;
+    min-height: 100vh;
     background-image: radial-gradient(circle, #343a60, #4e5579, #697292, #8690ad, #a5afc7, #a5b5cd, #a4bbd3, #a4c1d8, #80b1c6, #59a0b0, #329096, #007f77);
 }
 
@@ -24,7 +24,6 @@ h1 {
 
 .wrapper {
     padding: 2rem;
-    max-width: 600px;
     background-color: lightgray;
     border: 2px solid black;
     margin: auto;
@@ -37,15 +36,21 @@ button {
     border-color: #d16ba5;
 }
 
-.blog-post {
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid grey;
-    border-radius: 2rem;
-    max-width: calc ( 100% / 3 );
-
+.blog-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
 }
 
+.blog-post {
+
+  /* max-width: calc((100% / 3) - 3rem); */
+  padding: 1.5rem;
+  color: white;
+
+}
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
     /* Sfondo quasi invisibile */
